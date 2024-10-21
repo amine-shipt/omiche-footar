@@ -1,0 +1,681 @@
+<!DOCTYPE html>:
+
+<style>
+  /* جعل التصميم متجاوب مع الشاشات الصغيرة */
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    /* تعديل عرض الأعمدة لتتناسب مع حجم الهاتف */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* تكبير النصوص لجعلها أوضح */
+    h1, h2, h3 {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    /* تحسين تنسيق القوائم والعناصر النصية */
+    nav ul {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    /* ضبط حجم الصور */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* تحسين الأزرار والعناصر القابلة للنقر */
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+
+    /* تعديل المحتوى داخل الحاويات */
+    .content, .sidebar {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+</style>
+
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقع أوميش فوت</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to right, #1c6582, #000000);
+            color: #fff;
+        }
+
+        header {
+            background: rgba(10, 98, 165, 0.8);
+            padding: 20px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            width: 90%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* تأثيرات CSS */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeIn 0.5s forwards;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .teams-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .teams-table th, .teams-table td {
+            padding: 10px;
+            border: 1px solid #fff;
+            text-align: center;
+        }
+
+        .teams-table th {
+            background: #ffcc00;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>موقع أوميش فوت</h1>
+        <nav>
+            <a href="#news">أخبار</a>
+            <a href="#teams">الترتيب</a>
+            <a href="#matches">المباريات</a>
+            <a href="#contact">اتصل بنا</a>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <section id="news" class="section fade-in">
+            <h2>أخبار كرة القدم</h2>
+            <p>تابع أحدث الأخبار والتحليلات من عالم كرة القدم.</p><!DOCTYPE html>
+            <html lang="ar">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>أخبار كرة القدم</title>
+                <style>
+                    body {
+                        font-family: 'Arial', sans-serif;
+                        background-color: #1a1a1d;
+                        color: #fff;
+                        margin: 0;
+                        padding: 20px;
+                    }
+            
+                    .news-section {
+                        max-width: 1200px;
+                        margin: 0 auto;
+                        padding: 20px;
+                    }
+            
+                    .news-header {
+                        text-align: center;
+                        color: #ffcc00;
+                        margin-bottom: 20px;
+                    }
+            
+                    .news-container {
+                        display: flex;
+                        overflow-x: auto; /* تمكين التمرير الأفقي */
+                        gap: 15px;
+                        padding: 10px;
+                        scroll-behavior: smooth; /* تمرير سلس */
+                    }
+            
+                    .news-card {
+                        flex: 0 0 auto; /* يمنع العناصر من تغيير حجمها */
+                        background-color: #222;
+                        border-radius: 8px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                        width: 300px;
+                        cursor: pointer;
+                        transition: transform 0.3s;
+                    }
+            
+                    .news-card:hover {
+                        transform: translateY(-5px);
+                    }
+            
+                    .news-card img {
+                        width: 100%;
+                        height: 180px;
+                        object-fit: cover;
+                    }
+            
+                    .news-content {
+                        padding: 15px;
+                    }
+            
+                    .news-title {
+                        font-size: 1.2em;
+                        margin: 10px 0;
+                        color: #ffcc00;
+                    }
+            
+                    .news-summary {
+                        font-size: 0.9em;
+                        color: #ddd;
+                    }
+            
+                    .read-more {
+                        display: inline-block;
+                        margin-top: 10px;
+                        color: #ffcc00;
+                        text-decoration: none;
+                        font-weight: bold;
+                    }
+            
+                    .read-more:hover {
+                        text-decoration: underline;
+                    }
+            
+                    /* لإخفاء شريط التمرير في بعض المتصفحات */
+                    .news-container::-webkit-scrollbar {
+                        display: none;
+                    }
+                </style>
+            </head>
+            <body>
+            
+                <div class="news-section">
+                    <h1 class="news-header">أحدث أخبار كرة القدم</h1>
+                    <div class="news-container">
+                        <!-- بطاقة الخبر الأول -->
+                        <div class="news-card">
+                            <img src="https://d.top4top.io/p_3215or73s0.png" alt="خبر 1">
+                            <div class="news-content">
+                                <h3 class="news-title">كلاسيكو ناري ينتضر الفريقين</h3>
+                                <p class="news-summary">المباراة الأكتر شهرة في التاريخ على الأبواب
+                                <a href="#" class="read-more"></a>
+                                 <details id='y'>
+                                    <summary>اقرأ المزيد</summary>
+                                    <p>مقال: برشلونة وريال مدريد – الكلاسيكو القادم يترقب مواجهة ساخنة
+
+                                        تترقب جماهير كرة القدم العالمية مباراة الكلاسيكو القادمة بين برشلونة وريال مدريد يوم السبت المقبل، وهي مواجهة تاريخية تجمع بين أعظم فريقين في إسبانيا. هذه المباراة تحمل في طياتها الكثير من التوتر والإثارة، حيث يسعى كل فريق لإثبات تفوقه في هذا الصراع التقليدي.
+                                        
+                                        برشلونة – فليك يقود التحول الجديد
+                                        
+                                        يدخل برشلونة الكلاسيكو هذا الموسم بقيادة المدرب الألماني هانز فليك، الذي تولى تدريب الفريق بعد فترة قصيرة من التغيير الإداري. فليك المعروف بقدراته التكتيكية العالية وقوته في إدارة المباريات الكبرى، يسعى إلى فرض أسلوبه الألماني القوي على الفريق الكتالوني. برشلونة الآن يلعب بأسلوب مزيج بين الاستحواذ المعروف للنادي والتكتيك الحاد الذي يجلبه فليك من فترته الناجحة مع بايرن ميونيخ.
+                                        
+                                        برشلونة يعوّل على نجمه اللامع روبرت ليفاندوفسكي في خط الهجوم، الذي يعرف جيدًا فليك بعد أن عملا سويًا في الدوري الألماني. تحت قيادة فليك، ظهرت لمسات من الانضباط التكتيكي، مع تعزيز اللعب الدفاعي الذي كان يُعتبر نقطة ضعف للفريق في السنوات الماضية.
+                                        
+                                        ريال مدريد – أنشيلوتي وصراع الكلاسيكو
+                                        
+                                        من جهة أخرى، يدخل ريال مدريد بقيادة المدرب الإيطالي المخضرم كارلو أنشيلوتي، الذي يمتلك خبرة كبيرة في الكلاسيكو الإسباني. أنشيلوتي يعتمد على سرعة وتماسك لاعبيه، وخصوصًا في الهجمات المرتدة التي يجيد تنفيذها فريقه بشكل مميز. اللاعبون مثل فينيسيوس جونيور وجود بيلينغهام يمثلون القوة الهجومية التي يعوّل عليها الملكي لتحقيق الانتصار.
+                                        
+                                        الملكي سيكون على أتم استعداد لمواجهة تكتيكات فليك، حيث سيحاول أنشيلوتي استغلال أي ثغرات قد تظهر في دفاع برشلونة، مستفيدًا من توازن فريقه بين الدفاع والهجوم.
+                                        
+                                        مباراة التكتيك والإثارة
+                                        
+                                        الكلاسيكو المقبل لن يكون مجرد مواجهة بين فريقين، بل سيكون مواجهة بين فلسفتين مختلفتين في كرة القدم. هانز فليك بأسلوبه الألماني المنضبط، وكارلو أنشيلوتي بخبرته في استغلال اللحظات الحاسمة. ينتظر الجميع رؤية كيف سيتعامل فليك مع هذه المباراة الكبرى في ظل الضغط الكبير من جماهير الكامب نو التي تطمح لرؤية فريقها يحقق الانتصار.
+                                        
+                                        من المتوقع أن نشهد مباراة مفتوحة مليئة بالفرص والتحديات، مع احتمالية أن يكون الجانب التكتيكي هو العامل الحاسم في تحديد هوية المنتصر. النتيجة النهائية قد تكون غير متوقعة، لكن الإثارة والتشويق مضمونان في هذه المواجهة التي تمثل قمة الكرة الإسبانية</p>
+                                    </details>
+                            </div>
+                        </div>
+        
+                        <!-- بطاقة الخبر الثاني -->
+                        <div class="news-card">
+                            <img src="https://f.top4top.io/p_3215ctros0.jpg" alt="خبر 2">
+                            <div class="news-content">
+                                <h3 class="news-title">مباراة الموسم في دوري أبطال أروبا</h3>
+                                <p class="news-summary">برشلونة وبايرن ميونخ المباراة الاكتر اتارة في العالم</p>
+                                <details>
+                                    <summary>اقرأ المزيد</summary>
+
+                                    <p>مقال: مباراة برشلونة وبايرن ميونخ – صراع العمالقة في دوري الأبطال
+
+                                        تترقب جماهير كرة القدم حول العالم مباراة من العيار الثقيل تجمع بين برشلونة الإسباني وبايرن ميونخ الألماني في دوري أبطال أوروبا، وهي مباراة تحمل في طياتها الكثير من الإثارة والتحدي بين عمالقة الكرة الأوروبية. تاريخ المواجهات بين الفريقين مليء باللحظات الحاسمة والأحداث المثيرة، مما يجعل هذا اللقاء ذا طابع خاص.
+                                        
+                                        برشلونة – البحث عن استعادة الهيبة
+                                        
+                                        يدخل برشلونة المباراة وهو يسعى لاستعادة هيبته في الساحة الأوروبية بعد سنوات من التراجع. تحت قيادة المدرب هانز فليك، الذي يتمتع بخبرة كبيرة في إدارة المباريات الكبرى، يهدف الفريق الكتالوني إلى تحقيق فوز يضمن له مكانًا متقدمًا في البطولة. يعتمد برشلونة على مجموعة من النجوم الشابة مثل بيدري وغافي، بالإضافة إلى خبرة روبرت ليفاندوفسكي، الذي سيكون له دور محوري في الهجوم.
+                                        
+                                        برشلونة يسعى لتقديم أداء قوي يُظهر التطور الذي شهدته صفوفه في الفترة الأخيرة. جماهير النادي تتوقع رؤية فريقها يتنافس بقوة في هذه المباراة، حيث تُعتبر الانتصارات على الفرق الكبيرة مثل بايرن ميونخ خطوة مهمة لاستعادة الثقة في النادي.
+                                        
+                                        بايرن ميونخ – الملكي الألماني في أوج قوته
+                                        
+                                        في الجهة الأخرى، يدخل بايرن ميونخ المباراة بصفته أحد الأندية الأكثر نجاحًا في تاريخ دوري أبطال أوروبا. فريق المدرب توماس توخيل يعتمد على تشكيلة قوية تتضمن نجومًا مثل كينغسلي كومان وسيرج غنابري، مع وجود الهداف هاري كين، الذي انضم حديثًا إلى الفريق ويعتبر إضافة قوية.
+                                        
+                                        بايرن ميونخ يسعى لتحقيق الفوز في الكامب نو لتأكيد مكانته كواحد من أبرز الأندية في البطولة. تاريخياً، يتميز الفريق الألماني بقدرته على التعامل مع الضغوط، ويعتبر المرشح الأقوى للذهاب بعيدًا في البطولة.
+                                        
+                                        التكتيك والإثارة
+                                        
+                                        من المتوقع أن تكون المباراة مليئة بالإثارة، حيث يسعى كل فريق لفرض أسلوب لعبه. برشلونة ستحاول السيطرة على الكرة والضغط على بايرن ميونخ، بينما سيعتمد بايرن على الهجمات المرتدة السريعة واستغلال المساحات خلف دفاع برشلونة. التكتيكات المستخدمة ستلعب دورًا حاسمًا في تحديد مسار المباراة ونتيجتها.
+                                        
+                                        المباراة ليست مجرد مواجهة على أرض الملعب، بل هي أيضًا صراع فلسفي بين مدربين معروفين بأسلوبهم الفريد وقدرتهم على قراءة المباراة وتحفيز لاعبيهم. سيتابع الجميع كيف سيتعامل هانز فليك مع الأسماء اللامعة في صفوف بايرن وكيف سيستخدم توخيل استراتيجياته ضد الفريق الكتالوني.
+                                        
+                                        ختامًا
+                                        
+                                        مباراة برشلونة وبايرن ميونخ تمثل قمة كرة القدم الأوروبية، حيث يتواجه فريقان يمتلكان تاريخًا طويلًا من التنافس والنجاحات. الفوز في هذه المباراة لن يقتصر فقط على النقاط، بل سيعطي دفعة معنوية كبيرة للفائز في مسيرته نحو لقب دوري الأبطال. كما ستكون هذه المباراة فرصة للنجوم لتقديم أفضل ما لديهم وإبهار الجماهير في واحدة من أبرز السهرات الكروية.</p>
+
+                                </details>
+                                    <a href="#" class="read-more"></a>
+                            </div>
+                        </div>
+            
+                        <!-- بطاقة الخبر الثالث -->
+                        <div class="news-card">
+                            <img src="https://f.top4top.io/p_3215mz78i0.png" alt="خبر 3">
+                            <div class="news-content">
+                                <h3 class="news-title">مباراةالاختبار لريال مدريد/h3>
+                                <p class="news-summary">ريال مدريد يتوعد دوتمدوند في القلعة البيضاء</p>
+                                <a href="#" class="read-more"></a>
+                                <details id="y">
+                                    <summary>اقرأ المزيد</summary>
+                                    <p>مباراة بوروسيا دورتموند ضد ريال مدريد هي واحدة من أبرز المباريات في دوري أبطال أوروبا. يلتقي الفريقان عادة في منافسة قوية، حيث يجمع اللقاء بين اثنين من أقوى الفرق الأوروبية من حيث الأداء والتاريخ.
+
+                                        نظرة عامة على الفريقين:
+                                        
+                                        بوروسيا دورتموند: يقدم دورتموند أداءً قوياً في الدوري الألماني، ويتميز بلاعبيه الشباب وسرعتهم في الهجمات المرتدة. الفريق يعتمد على خططه التكتيكية الهجومية وتبادل المراكز بين اللاعبين في الوسط والهجوم.
+                                        
+                                        ريال مدريد: يتمتع ريال مدريد بخبرة كبيرة في دوري الأبطال، وهو أحد أكثر الفرق فوزاً باللقب في تاريخ المسابقة. الفريق يمتلك تشكيلة متوازنة تجمع بين الخبرة والشباب، مما يجعله خصماً صعباً لأي فريق.
+                                        
+                                        
+                                        عوامل القوة:
+                                        
+                                        بوروسيا دورتموند يعتمد بشكل كبير على السرعة والضغط العالي، حيث يمتلك لاعبين مثل جود بيلينغهام الذين يمكنهم خلق الفرص والسيطرة على إيقاع اللعب.
+                                        
+                                        ريال مدريد يستفيد من خبرة لاعبيه في المواقف الصعبة وقدرتهم على تغيير النتيجة في اللحظات الحاسمة بفضل لاعبين مثل فينيسيوس جونيور ورودريغو وغاريث بيل.
+                                        
+                                        
+                                        التكتيك المتوقع:
+                                        
+                                        من المتوقع أن يبدأ دورتموند المباراة بضغوط عالية لمحاولة تسجيل هدف مبكر، مع التركيز على الهجمات المرتدة السريعة.
+                                        
+                                        ريال مدريد قد يعتمد على أسلوب لعبه المعتاد من خلال التحكم في وسط الملعب وبناء الهجمات بشكل منظم، مستغلاً خبرة لاعبيه في التحركات والتمريرات الدقيقة.
+                                        
+                                        
+                                        التوقعات: هذه المباراة ستكون بلا شك تنافسية للغاية، مع توقع أن يشهد اللقاء أهدافاً وفرصاً عديدة من كلا الطرفين. ستكون خبرة ريال مدريد عاملاً حاسماً، لكن دورتموند لا يمكن الاستهانة به أبداً بسبب سرعته وقدرته على استغلال الهفوات الدفاعية.
+                                        
+                                        سيكون من المثير متابعة هذه المباراة لمعرفة من سيتمكن من فرض أسلوبه وتحقيق الفوز.</p>
+                                </details>
+                            </div>
+                        </div>
+            
+                        <!-- يمكنك إضافة المزيد من بطاقات الأخبار هنا -->
+                    </div>
+                </div>
+            
+            </body>
+            </html>
+            
+
+
+                    </section>
+
+        <section id="teams" class="section fade-in">
+            <h1>ترتيب الدوري الاسباني</h1>
+            <table class="teams-table">
+                <tr>
+                    <th>النقاط</th>
+                    <th>الفرق</th>
+                    <th>الترتيب</th>
+                </tr>
+                <tr>
+                    <td>27</td>
+                    <td>برشلونة</td>
+                    <td>1</td>
+                </tr>
+                <tr>
+                    <td>24</td>
+                    <td>ريال مدريد</td>
+                    <td>2</td>
+                </tr>
+                <tr>
+                    <td>20</td><!DOCTYPE html>
+
+                    <td>أتليتيكو مدريد</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>18</td>
+                    <td>فياربال</td>
+                    <td>4</td>
+                </tr>
+                    <td>17</td>
+                    <td>أتليتيكو بلباو</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>17</td>
+                    <td>مايوركا</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>ريال بيتيس</td>
+                    <td>7</td>
+                </tr>
+                <tr>
+                    <td>15</td>
+                    <td>أوساسونا</td>
+                    <td>8</td>
+                </tr>
+                <tr>
+                    <td>13</td>
+                    <td>رايو فاليكانو</td>
+                    <td>9</td>
+                </tr><tr>
+                    <td>13</td>
+                    <td>سيلتا فيغو</td>
+                    <td>10</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>ريال سوسيداد</td>
+                    <td>11</td>
+                </tr><tr>
+                    <td>12</td>
+                    <td>جيرونا</td>
+                    <td>12</td>
+                </tr>
+                <tr>
+                    <td>12</td>
+                    <td>اشبيلية</td>
+                    <td>13</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>جيبورتيفو ألافيس</td>
+                    <td>14</td>
+                </tr>
+                <tr>
+                    <td>10</td>
+                    <td>اسبانيول</td>
+                    <td>15</td>
+                </tr>
+                    
+                <tr>
+                    <td>9</td>
+                    <td>خيتافي</td>
+                    <td>16</td>
+                </tr><tr>
+                    <td>8</td>
+                    <td>ليغانيس</td>
+                    <td>17</td>
+                </tr>
+                <tr>
+                    <td>8</td>
+                    <td>بلد الوليد</td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>فالنسيا</td>
+                    <td>19</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>لاس بالماس </td>
+                    <td>20</td>
+                </tr>
+
+
+
+
+                
+            </table>
+        </section>
+
+        <section id="matches" class="section fade-in">
+            <h2>المباريات</h2>
+            <p>تابع مواعيد المباريات والنتائج المباشرة.</p><!DOCTYPE html>
+            <html lang="ar">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>جدول مباريات كرة القدم</title>
+                <style>
+                    body {
+                        font-family: 'Arial', sans-serif;
+                        background-color: #1a1a1d;
+                        color: #fff;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        height: 100vh;
+                        margin: 0;
+                    }
+            
+                    .matches-table {
+                        width: 80%;
+                        background-color: #222;
+                        border-collapse: collapse;
+                        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+                    }
+            
+                    .matches-table th, .matches-table td {
+                        padding: 15px;
+                        text-align: center;
+                        border: 1px solid #444;
+                    }
+            
+                    .matches-table th {
+                        background-color: #333;
+                        color: #ffcc00;
+                        font-size: 1.2em;
+                    }
+            
+                    .matches-table tr:nth-child(even) {
+                        background-color: #2a2a2d;
+                    }
+            
+                    .matches-table tr:hover {
+                        background-color: #3e3e42;
+                        transition: background-color 0.3s;
+                    }
+            
+                    .team-name {
+                        font-weight: bold;
+                    }
+            
+                    .match-status {
+                        color: #ff4d4d;
+                    }
+            
+                    .match-completed {
+                        color: #4caf50;
+                    }
+                </style>
+            </head>
+            <body>
+            
+                <table class="matches-table">
+                    <thead>
+                        <tr>
+                            <th>التاريخ</th>
+                            <th>الفريق الأول</th>
+                            <th>النتيجة</th>
+                            <th>الفريق الثاني</th>
+                            <th>الملعب</th>
+                            <th>الحالة</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>23 أكتوبر 2024</td>
+                            <td class="team-name">بايرن ميونخ</td>
+                            <td>-</td>
+                            <td class="team-name">برشلونة</td>
+                            <td>لويس كومبانيس</td>
+                            <td class="match-status">لم تبدأ</td>
+                        </tr>
+                        <tr>
+                            <td>22 أكتوبر 2024</td>
+                            <td class="team-name">ريال مدريد</td>
+                            <td>-</td>
+                            <td class="team-name">بروسيا دوتمدوند</td>
+                            <td>سانتياغو برنابيو</td>
+                            <td class="match-completed">لم تبدأ</td>
+                        </tr>
+                        <tr>
+                            <td> أكتوبر27 2024 </td>
+                            <td class="team-name">برشلونة</td>
+                            <td> - </td>
+                            <td class="team-name">ريال مدريد</td>
+                            <td>سانتياغو برنابيو</td>
+                            <td class="match-status">جارية</td>
+                        </tr>
+                    </tbody>
+                </table>
+            
+            </body>
+            </html>
+            
+            
+        </section>
+
+
+        <section id="contact" class="section fade-in">
+            <h2>اتصل بنا</h2>
+            <p>لديك استفسار؟ تواصل معنا عبر الرقم 0674792441 info@omiche .com</foot></p>
+            <h3>تم انشاء هدا الموقع من قبل المصمم والمبرمج أمين أوميش</h3>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 موقع أوميش فوت</p>
+    </footer>
+
+    <script>
+        // تأثيرات جافا سكريبت
+        window.onload = function() {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach((section, index) => {
+                section.style.animationDelay = ${index * 0.2}s;
+            });
+        };
+    </script>
+</body>
+</html>:
+
+<style>
+  /* جعل التصميم متجاوب مع الشاشات الصغيرة */
+  @media only screen and (max-width: 600px) {
+    body {
+      font-size: 16px;
+      padding: 10px;
+    }
+
+    /* تعديل عرض الأعمدة لتتناسب مع حجم الهاتف */
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* تكبير النصوص لجعلها أوضح */
+    h1, h2, h3 {
+      text-align: center;
+      font-size: 24px;
+    }
+
+    /* تحسين تنسيق القوائم والعناصر النصية */
+    nav ul {
+      flex-direction: column;
+      padding: 0;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+    }
+
+    /* ضبط حجم الصور */
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* تحسين الأزرار والعناصر القابلة للنقر */
+    button {
+      width: 100%;
+      padding: 12px;
+    }
+
+    /* تعديل المحتوى داخل الحاويات */
+    .content, .sidebar {
+      width: 100%;
+      margin: 10px 0;
+    }
+  }
+</style>
